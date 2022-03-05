@@ -48,7 +48,7 @@ export default function parse() {
       const tokenAssociativity = checkAssociativity(token)
 
       if (!stack.isEmpty()) {
-        while (operators.indexOf(topStack) !== -1 && stack.peek() !== '(' &&
+        while (operators.indexOf(topStack) !== -1 && topStack !== '(' &&
           topPrecedence > tokenPrecedence || topPrecedence === tokenPrecedence &&
           tokenAssociativity === 'left'
         ) {
@@ -68,8 +68,7 @@ export default function parse() {
       // for debug
       console.log('is l-parenthesis')
     } else if (token === ')') {
-      // @ts-ignore
-      while(stack.peek() !== '(') {
+      while(topStack !== '(') {
         if (!stack.isEmpty()) {
           // add to output queue
           queue += stack.pop() + " "
@@ -77,15 +76,21 @@ export default function parse() {
             queue += stack.pop() + " "
           }
         }
+        topStack = stack.peek()
       }
-      stack.pop()
+      // stack.pop()
       // for debug
       console.log('is r-parenthesis')
     }
   }
 
   while (!stack.isEmpty()) {
-    queue += stack.pop() + " "
+    const topStack = stack.peek()
+    if (topStack === '(') {
+      stack.pop()
+    } else {
+      queue += stack.pop() + " "
+    }
   }
 
   // output to screen
