@@ -1,5 +1,5 @@
-import parse from "./parse"
-import evaluate from "./evaluate"
+import parse from "./parse.js"
+import evaluate from "./evaluate.js"
 
 //buttons
 const karatBtn = document.querySelector('#karat')! as HTMLInputElement
@@ -44,29 +44,29 @@ karatBtn.onclick = function() {
   addText(' ^ ')
 }
 logBtn.onclick = function() {
-  addText(' log ')
+  addText(' log( ')
 }
 sinBtn.onclick = function() {
-  addText(' sin ')
+  addText(' sin( ')
 }
 cosBtn.onclick = function() {
-  addText(' cos ')
+  addText(' cos( ')
 }
 tanBtn.onclick = function() {
-  addText(' tan ')
+  addText(' tan( ')
 }
 
 sqrtBtn.onclick = function() {
-  addText(' sqrt ')
+  addText(' sqrt( ')
 }
 arcsinBtn.onclick = function() {
-  addText(' arcsin ')
+  addText(' arcsin( ')
 }
 arccosBtn.onclick = function() {
-  addText(' arccos ')
+  addText(' arccos( ')
 }
 arctanBtn.onclick = function() {
-  addText(' arctan ')
+  addText(' arctan( ')
 }
 
 number7Btn.onclick = function() {
@@ -120,7 +120,7 @@ minusBtn.onclick = function() {
   addText(' - ')
 }
 lnBtn.onclick = function() {
-  addText(' ln ')
+  addText(' ln( ')
 }
 
 number0Btn.onclick = function() {

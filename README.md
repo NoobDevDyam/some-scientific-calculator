@@ -5,8 +5,14 @@
 ## Things this uses
 
 1. Typescript
-2. @psse-cpu/tokenizer
+2. regex
 3. Simple CSS
+
+To transpile ts to js
+
+```js
+  npm start
+```
 
 - This project is implementing the Shunting Yard Algorithm
 

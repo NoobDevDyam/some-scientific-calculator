@@ -23,4 +23,8 @@ export default class Stack<T> {
   isFull(): boolean {
     return this.count >= this.data.length
   }
+
+  shift(): T {
+    return this.data[0]
+  }
 }

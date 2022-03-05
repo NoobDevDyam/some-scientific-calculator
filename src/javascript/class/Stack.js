@@ -1,6 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-class Stack {
+export default class Stack {
     constructor() {
         this.data = Object.seal(new Array(10).fill(undefined));
         this.count = 0;
@@ -22,5 +20,7 @@ class Stack {
     isFull() {
         return this.count >= this.data.length;
     }
+    shift() {
+        return this.data[0];
+    }
 }
-exports.default = Stack;

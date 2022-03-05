@@ -1,4 +1,5 @@
-"use strict";
+import parse from "./parse.js";
+import evaluate from "./evaluate.js";
 //buttons
 const karatBtn = document.querySelector('#karat');
 const logBtn = document.querySelector('#log');
@@ -36,28 +37,28 @@ karatBtn.onclick = function () {
     addText(' ^ ');
 };
 logBtn.onclick = function () {
-    addText(' log ');
+    addText(' log( ');
 };
 sinBtn.onclick = function () {
-    addText(' sin ');
+    addText(' sin( ');
 };
 cosBtn.onclick = function () {
-    addText(' cos ');
+    addText(' cos( ');
 };
 tanBtn.onclick = function () {
-    addText(' tan ');
+    addText(' tan( ');
 };
 sqrtBtn.onclick = function () {
-    addText(' sqrt ');
+    addText(' sqrt( ');
 };
 arcsinBtn.onclick = function () {
-    addText(' arcsin ');
+    addText(' arcsin( ');
 };
 arccosBtn.onclick = function () {
-    addText(' arccos ');
+    addText(' arccos( ');
 };
 arctanBtn.onclick = function () {
-    addText(' arctan ');
+    addText(' arctan( ');
 };
 number7Btn.onclick = function () {
     addText('7');
@@ -108,7 +109,7 @@ minusBtn.onclick = function () {
     addText(' - ');
 };
 lnBtn.onclick = function () {
-    addText(' ln ');
+    addText(' ln( ');
 };
 number0Btn.onclick = function () {
     addText('0');
@@ -125,9 +126,9 @@ rightParenthesisBtn.onclick = function () {
 cbrtBtn.onclick = function () {
     addText(' cbrt ');
 };
-/* calculateBtn.onclick = function() {
-  calculate()
-} */
+calculateBtn.onclick = function () {
+    calculate();
+};
 function clearText() {
     const inputString = document.querySelector('#inputString');
     const outputString = document.querySelector('#outputString');
@@ -144,4 +145,8 @@ function removeText() {
 function addText(text) {
     const inputString = document.querySelector('#inputString');
     inputString.innerHTML += text;
+}
+function calculate() {
+    parse();
+    evaluate();
 }

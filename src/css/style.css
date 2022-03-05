@@ -56,11 +56,16 @@ button {
 
 .screen {
   background-color: var(--clr-screen);
-  width: 120vh;
+  width: 130vh;
   height: 300px;
 
   border-radius: 2rem;
   margin-bottom: 1rem;
+
+  max-width: 1300px;
+  min-width: 1300px;
+  max-height: 300px;
+  min-height: 300px;
 }
 
 p {
@@ -72,5 +77,11 @@ p {
 .output {
   font-weight: 800;
   font-size: 4rem;
+}
+
+.body {
+  width: 135vh;
+  max-width: 1300px;
+  min-width: 1300px;
 }
 
