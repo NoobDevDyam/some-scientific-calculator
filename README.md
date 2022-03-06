@@ -1,4 +1,4 @@
-# Some Scietific Calculator
+# Some Scientific Calculator
 
   > A scientific calculator made from typescript
 
