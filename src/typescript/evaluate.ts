@@ -94,7 +94,7 @@ export default function evaluate() {
       stack.push(`${answer}`)
     }
 
-    outputString.innerHTML = stack.shift()
+    outputString.innerHTML = stack.peek()
     console.log(stack)
 
   }
